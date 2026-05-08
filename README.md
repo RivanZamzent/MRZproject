@@ -1,58 +1,61 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/render?type=soft&color=auto&height=200&section=header&text=MRZ%20PROJECTS&fontSize=70" width="100%" />
-</p>
+# 🚀 MRZ Project Collection
 
-<p align="center">
-  <a href="https://github.com/RivanZamzent">
-    <img src="https://img.shields.io/badge/DEVELOPER-Mas'ud%20Rifan-blueviolet?style=for-the-badge&logo=github" />
-  </a>
-  <img src="https://img.shields.io/badge/STATUS-ACTIVE-success?style=for-the-badge" />
-</p>
+Welcome to the **MRZ Project Collection**! This repository is a curated showcase of various web development experiments, interactive components, and games created by **Mas'ud Rifan Zamzent**.
 
 ---
 
-### 🌑 The Vision
-A personal laboratory where code meets creativity. This repository houses a collection of high-end web experiments, ranging from 3D simulations to interactive game mechanics.
+## 🎨 Featured Projects
+
+### 🌌 Visual & Interactive Experiments
+- **[Dragon Breath](Dragon_Breath/)** - A high-fidelity interactive visual effect.
+- **[BlackHole](BlackHole/)** - A space-themed visual simulation.
+- **[City3D](City3D/)** - 3D architectural visualization using web technologies.
+- **[LiquidGlash](LiquidGlash/)** - Modern glassmorphism UI experiment with liquid effects.
+- **[Infinite Looping](Infinite_Looping/)** - Smooth, seamless animation loops.
+- **[HyperScroll](HyperScroll/)** - Advanced scrolling interactions and effects.
+
+### 🌦️ Widgets & Tools
+- **[3D Weather Widget](3D_Weather_Widget/)** - A premium 3D real-time meteorological dashboard.
+- **[Periodic Table](Periodic_Table/)** - Interactive scientific data visualization.
+- **[tension](tension/)** - Physics-based interaction project.
+
+### 🎮 Koleksi Game (Game Collection)
+A mini-suite of interactive web games:
+- **Pickle Maze Game** - Navigate through challenging mazes.
+- **Spell Caster** - Magical interaction game.
+- **Stick Hero** - Precision and timing game.
+- **The Cube** - 3D puzzle/interaction game.
+
+### 🏛️ Gallery & Portfolio
+- **[GaleryArt TimeTraveler](GaleryArt_TimeTraveler/)** - Art exhibition interface.
+- **[GaleryHall](GaleryHall/)** - Virtual hall experience.
+- **[ProjectUTS WebPrograming](ProjectUTS_WebPrograming/)** - Web Programming Midterm Project (Academic).
 
 ---
 
-### 🚀 Featured Modules
-
-#### 💎 High-End Visuals
-> **Dragon Breath** • **BlackHole** • **LiquidGlash**
-*Focused on shaders, particle systems, and modern glassmorphism UI.*
-
-#### ⚡ Interactive Logic
-> **HyperScroll** • **Infinite Looping** • **tension**
-*Pushing the boundaries of DOM manipulation and CSS animations.*
-
-#### 🛠️ Professional Tools
-> **3D Weather Widget** • **Periodic Table**
-*Real-world utility meets premium design.*
-
-#### 🎮 Gaming Arena
-> **Pickle Maze** • **Spell Caster** • **Stick Hero** • **The Cube**
-*Clean, lightweight, and addictive web-based games.*
+## 🛠️ Tech Stack
+This collection primarily uses:
+- **HTML5** & **Semantic HTML**
+- **Modern CSS** (Glassmorphism, Gradients, 3D Transforms)
+- **JavaScript (ES6+)**
+- **PHP** (for server-side logic in academic projects)
 
 ---
 
-### 🛠 Tools of the Trade
-```json
-{
-  "frontend": ["HTML5", "CSS3", "JavaScript (ES6+)"],
-  "backend": ["PHP", "MySQL"],
-  "design": ["Glassmorphism", "3D Transforms", "Responsive Layouts"]
-}
-```
+## 🚀 How to Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/RivanZamzent/MRZproject.git
+   ```
+2. Navigate to the project folder you want to view.
+3. Open the `index.html` file in your browser (or run via XAMPP for PHP projects).
 
 ---
 
-### 📦 Installation
-1. Clone the repo: `git clone https://github.com/RivanZamzent/MRZproject.git`
-2. Open any folder and launch `index.html`.
+## 👤 Author
+**Mas'ud Rifan Zamzent**  
+📧 [irfanmasud66@gmail.com](mailto:irfanmasud66@gmail.com)  
+🔗 [GitHub Profile](https://github.com/RivanZamzent)
 
 ---
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/render?type=slice&color=auto&height=100&section=footer" width="100%" />
-</p>
+*Created with ❤️ and Antigravity AI.*
