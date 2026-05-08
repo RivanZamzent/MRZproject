@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio UTS - Mas'ud Rifan Zamzen</title>
+  <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+
+<body>
+
+  <!-- Top Widgets: Theme, Status, Language -->
+  <div class="top-widgets">
+    <div class="live-status">
+      <span class="status-dot"></span>
+      <span id="live-time">00:00</span> <span class="loc" style="opacity:0.7; font-size:10px;">(Pekanbaru)</span>
+    </div>
+    <div class="toggles">
+      <span class="theme-btn" id="darkmode-toggle" title="Mode Gelap/Terang">🌙</span>
+      <div class="lang-toggle">
+        <span class="lang-btn active" data-lang="id">ID</span> | <span class="lang-btn" data-lang="en">EN</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-content glass">
+      <button class="modal-close" id="proj-close">×</button>
+      <h2 id="modal-title">Project Title</h2>
+      <div class="tech-tags" id="modal-tags"></div>
+      <p id="modal-desc" class="modal-desc">Description</p>
+      <a href="#" id="modal-launch" class="btn-primary" target="_blank" data-i18n="modal_launch">Luncurkan Project</a>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contact-modal">
+    <div class="modal-content glass">
+      <button class="modal-close" id="contact-close">×</button>
+      <h2 data-i18n="form_title">Hubungi Saya</h2>
+      <div class="contact-form">
+        <input type="text" placeholder="Nama Anda" id="form-name" data-i18n-placeholder="form_name">
+        <input type="email" placeholder="Email" id="form-email">
+        <textarea placeholder="Pesan Anda" id="form-msg" data-i18n-placeholder="form_msg"></textarea>
+        <button id="send-btn" class="btn-primary" data-i18n="form_send">KIRIM PESAN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-border"></div>
+
+  <!-- ThreeJS Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="card is-active" data-state="about" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare
+    data-tilt-max-glare="0.2">
+    <div class="card-header">
+      <div class="card-cover" style="background-image: url('ppgua.jpeg')"></div>
+      <div class="avatar-wrapper">
+        <img class="card-avatar" src="ppgua.jpeg" alt="avatar" />
+      </div>
+      <h1 class="card-fullname">Mas'ud Rifan Zamzen</h1>
+      <h2 class="card-jobtitle" data-i18n="jobtitle">Teknik Informatika | 24081024</h2>
+    </div>
+
+    <div class="card-main">
+
+      <!-- SECTION: ABOUT -->
+      <div class="card-section is-active" id="about">
+        <div class="card-content">
+          <div class="card-subtitle" data-i18n="about_title">ABOUT</div>
+          <p class="card-desc" id="typewriter-text"
+            data-text="Mahasiswa Teknik Informatika di Universitas Hang Tuah Pekanbaru (UHTP) dengan minat mendalam pada UI/UX Design, pengembangan antarmuka menggunakan Figma, Adobe XD, Webflow, serta logika pemrograman backend.">
+          </p>
+        </div>
+        <div class="card-social">
+          <a href="#"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M15.997 3.985h2.191V.169C17.81.117 16.51 0 14.996 0c-3.159 0-5.323 1.987-5.323 5.639V9H6.187v4.266h3.486V24h4.274V13.267h3.345l.531-4.266h-3.877V6.062c.001-1.233.333-2.077 2.051-2.077z" />
+            </svg></a>
+          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z" />
+            </svg></a>
+          <a href="#"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M301 256c0 24.852-20.148 45-45 45s-45-20.148-45-45 20.148-45 45-45 45 20.148 45 45zm0 0" />
+              <path
+                d="M332 120H180c-33.086 0-60 26.914-60 60v152c0 33.086 26.914 60 60 60h152c33.086 0 60-26.914 60-60V180c0-33.086-26.914-60-60-60zm-76 211c-41.355 0-75-33.645-75-75s33.645-75 75-75 75 33.645 75 75-33.645 75-75 75zm86-146c-8.285 0-15-6.715-15-15s6.715-15 15-15 15 6.715 15 15-6.715 15-15 15zm0 0" />
+              <path
+                d="M377 0H135C60.562 0 0 60.563 0 135v242c0 74.438 60.563 135 135 135h242c74.438 0 135-60.563 135-135V135C512 60.562 451.437 0 377 0zm45 332c0 49.625-40.375 90-90 90H180c-49.625 0-90-40.375-90-90V180c0-49.625 40.375-90 90-90h152c49.625 0 90 40.375 90 90zm0 0" />
+            </svg></a>
+          <a href="#"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 002.882 0z" />
+            </svg></a>
+        </div>
+
+        <div class="about-extras stagger-item" style="animation-delay: 0.4s">
+          <div class="skills-wrapper">
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">Three.js</span>
+            <span class="skill-tag">PHP</span>
+          </div>
+          <button class="btn-secondary" data-i18n="btn_cv">Download CV</button>
+        </div>
+      </div>
+
+      <!-- SECTION: EXPERIENCE -->
+      <div class="card-section" id="experience">
+        <div class="card-content">
+          <div class="card-subtitle" data-i18n="exp_title">PROJECTS & EXPERIENCE</div>
+          <div class="card-timeline" id="exp-timeline">
+            <div class="card-item" data-year="2026">
+              <div class="card-item-title" data-i18n="exp_1_title">UI/UX Designer at <span>HabitFlow App</span></div>
+              <div class="card-item-desc" data-i18n="exp_1_desc">Merancang struktur desain dan alur pengguna untuk
+                aplikasi pelacak kebiasaan.</div>
+            </div>
+            <div class="card-item" data-year="2026">
+              <div class="card-item-title" data-i18n="exp_2_title">Junior AI Developer <span>Freelance</span></div>
+              <div class="card-item-desc" data-i18n="exp_2_desc">Membangun model Machine Learning berbasis Python dan
+                menerapkan teknik Prompt Engineering.</div>
+            </div>
+            <div class="card-item" data-year="2026">
+              <div class="card-item-title" data-i18n="exp_3_title">Data Analyst Intern <span>FinTech Solutions</span>
+              </div>
+              <div class="card-item-desc" data-i18n="exp_3_desc">Menganalisis pergerakan aset digital dan menerapkan
+                indikator teknikal untuk optimasi sistem trading.</div>
+            </div>
+            <div class="card-item" data-year="2025">
+              <div class="card-item-title" data-i18n="exp_4_title">Game UI/UX Designer <span>Nexus Studio</span></div>
+              <div class="card-item-desc" data-i18n="exp_4_desc">Merancang purwarupa antarmuka interaktif dan layout
+                dinamis untuk game mobile menggunakan Figma.</div>
+            </div>
+            <div class="card-item" data-year="2025">
+              <div class="card-item-title" data-i18n="exp_5_title">Developer at <span>SI-MANTAN App</span></div>
+              <div class="card-item-desc" data-i18n="exp_5_desc">Meningkatkan fitur interaktif pada aplikasi
+                pembelajaran anatomi tubuh versi 3.0.</div>
+            </div>
+            <div class="card-item" data-year="2024">
+              <div class="card-item-title" data-i18n="exp_6_title">Mahasiswa <span>UHTP</span></div>
+              <div class="card-item-desc" data-i18n="exp_6_desc">Memulai studi Teknik Informatika dan aktif di proyek
+                kolaborasi kelompok.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: CONTACT -->
+      <div class="card-section" id="contact">
+        <div class="card-content">
+          <div class="card-subtitle" data-i18n="contact_title">CONTACT</div>
+          <div class="card-contact-wrapper">
+            <div class="card-contact stagger-item" style="animation-delay: 0.1s">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Pekanbaru, Riau, Indonesia
+            </div>
+            <div class="card-contact stagger-item" style="animation-delay: 0.2s">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+              </svg>
+              (0812) 3456-7890
+            </div>
+            <div class="card-contact stagger-item" style="animation-delay: 0.3s">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <path d="M22 6l-10 7L2 6" />
+              </svg>
+              masud.rifan@student.uhtp.ac.id
+            </div>
+            <button class="contact-me stagger-item" style="animation-delay: 0.4s" id="open-contact"
+              data-i18n="btn_work">WORK TOGETHER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: SHOWCASE -->
+      <div class="card-section" id="showcase">
+        <div class="card-content">
+          <div class="card-subtitle" data-i18n="showcase_title">MY 3D SHOWCASE</div>
+          <div class="card-timeline" id="show-timeline">
+            <div class="card-item stagger-item" style="animation-delay: 0.1s" data-year="3D">
+              <div class="card-item-title"><a href="#" class="view-project-btn" data-url="../City3D/index.html"
+                  data-title="sc_1_title" data-desc="sc_1_desc" data-tech="Three.js, GSAP, HTML/CSS">Cyber City 3D <span
+                    style="color:#8a84ff;">View</span></a></div>
+              <div class="card-item-desc" data-i18n="sc_1_desc">Procedural Cyberpunk City with GSAP animations & laser
+                trails.</div>
+            </div>
+            <div class="card-item stagger-item" style="animation-delay: 0.2s" data-year="3D">
+              <div class="card-item-title"><a href="#" class="view-project-btn" data-url="../Solar_System/index.html"
+                  data-title="sc_2_title" data-desc="sc_2_desc" data-tech="HTML, CSS 3D">Solar System <span
+                    style="color:#8a84ff;">View</span></a></div>
+              <div class="card-item-desc" data-i18n="sc_2_desc">Complex CSS 3D solar system with accurate trajectories.
+              </div>
+            </div>
+            <div class="card-item stagger-item" style="animation-delay: 0.3s" data-year="UI">
+              <div class="card-item-title"><a href="#" class="view-project-btn" data-url="../Periodic_Table/index.html"
+                  data-title="sc_3_title" data-desc="sc_3_desc" data-tech="Three.js, HTML, CSS">Periodic Table <span
+                    style="color:#8a84ff;">View</span></a></div>
+              <div class="card-item-desc" data-i18n="sc_3_desc">Interactive 3D Periodic Table of Elements.</div>
+            </div>
+            <div class="card-item stagger-item" style="animation-delay: 0.4s" data-year="UI">
+              <div class="card-item-title"><a href="#" class="view-project-btn" data-url="../BlackHole/index.html"
+                  data-title="sc_4_title" data-desc="sc_4_desc" data-tech="Three.js, GLSL Shaders">Blackhole <span
+                    style="color:#8a84ff;">View</span></a></div>
+              <div class="card-item-desc" data-i18n="sc_4_desc">Physics-based blackhole rendering.</div>
+            </div>
+            <div class="card-item stagger-item" style="animation-delay: 0.5s" data-year="Web">
+              <div class="card-item-title"><a href="#" class="view-project-btn"
+                  data-url="../GaleryArt_TimeTraveler/index.html" data-title="sc_5_title" data-desc="sc_5_desc"
+                  data-tech="Vanilla Tilt, HTML, CSS">Galery Art TimeTraveler <span
+                    style="color:#8a84ff;">View</span></a></div>
+              <div class="card-item-desc" data-i18n="sc_5_desc">Interactive Time Traveler Art Gallery.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: TECH STACK -->
+      <div class="card-section" id="techstack">
+        <div class="card-content">
+          <div class="card-subtitle" data-i18n="stack_title">TECH STACK</div>
+          <div class="tech-grid">
+            <div class="tech-item stagger-item" style="animation-delay: 0.1s; --hover-color: #F24E1E;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+              <span>Figma</span>
+            </div>
+            <div class="tech-item stagger-item" style="animation-delay: 0.2s; --hover-color: #E34F26;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+              <span>HTML5</span>
+            </div>
+            <div class="tech-item stagger-item" style="animation-delay: 0.3s; --hover-color: #1572B6;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+              <span>CSS3</span>
+            </div>
+            <div class="tech-item stagger-item" style="animation-delay: 0.4s; --hover-color: #F7DF1E;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript">
+              <span>JavaScript</span>
+            </div>
+            <div class="tech-item stagger-item" style="animation-delay: 0.5s; --hover-color: #ffffff;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="Three.js">
+              <span>Three.js</span>
+            </div>
+            <div class="tech-item stagger-item" style="animation-delay: 0.6s; --hover-color: #777BB4;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+              <span>PHP</span>
+            </div>
+            <div class="tech-item stagger-item" style="animation-delay: 0.7s; --hover-color: #3776AB;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+              <span>Python</span>
+            </div>
+            <div class="tech-item stagger-item" style="animation-delay: 0.8s; --hover-color: #4353ED;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webflow/webflow-original.svg" alt="Webflow">
+              <span>Webflow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUTTONS: SPA Routing -->
+      <div class="card-buttons">
+        <a href="#" data-target="about" class="is-active nav-btn" data-i18n="nav_about">ABOUT</a>
+        <a href="#" data-target="experience" class="nav-btn" data-i18n="nav_exp">EXPERIENCE</a>
+        <a href="#" data-target="techstack" class="nav-btn" data-i18n="nav_stack">STACK</a>
+        <a href="#" data-target="showcase" class="nav-btn" data-i18n="nav_show">SHOWCASE</a>
+        <a href="#" data-target="contact" class="nav-btn" data-i18n="nav_contact">CONTACT</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts for 3D and Interaction -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // Simple ThreeJS Particle Background
+    const canvas = document.querySelector('#bg-canvas');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCount = 2000;
+    const posArray = new Float32Array(particlesCount * 3);
+
+    for (let i = 0; i < particlesCount * 3; i++) {
+      posArray[i] = (Math.random() - 0.5) * 10;
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    const material = new THREE.PointsMaterial({
+      size: 0.015,
+      color: 0x8a84ff,
+      transparent: true,
+      opacity: 0.6,
+      blending: THREE.AdditiveBlending
+    });
+
+    const particlesMesh = new THREE.Points(particlesGeometry, material);
+    scene.add(particlesMesh);
+    camera.position.z = 2;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    document.addEventListener('mousemove', (event) => {
+      mouseX = event.clientX / window.innerWidth - 0.5;
+      mouseY = event.clientY / window.innerHeight - 0.5;
+    });
+
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const elapsedTime = clock.getElapsedTime();
+
+      particlesMesh.rotation.y = elapsedTime * 0.05;
+      particlesMesh.rotation.x = elapsedTime * 0.02;
+
+      particlesMesh.rotation.x += mouseY * 0.1;
+      particlesMesh.rotation.y += mouseX * 0.1;
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+    // --- WEB AUDIO API FOR SFX ---
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx;
+
+    function initAudio() {
+      if (!audioCtx) audioCtx = new AudioContext();
+    }
+
+    function playSound(type) {
+      if (!audioCtx) return;
+      const oscillator = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+
+      oscillator.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+
+      if (type === 'hover') {
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(800, audioCtx.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.05);
+        gainNode.gain.setValueAtTime(0.02, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        oscillator.start();
+        oscillator.stop(audioCtx.currentTime + 0.05);
+      } else if (type === 'click') {
+        oscillator.type = 'triangle';
+        oscillator.frequency.setValueAtTime(300, audioCtx.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
+        gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+        oscillator.start();
+        oscillator.stop(audioCtx.currentTime + 0.1);
+      }
+    }
+
+    // --- CUSTOM CURSOR ---
+    const cursor = document.getElementById('cursor');
+    const cursorBorder = document.getElementById('cursor-border');
+    let cursorX = 0, cursorY = 0;
+    let borderX = 0, borderY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      cursorX = e.clientX;
+      cursorY = e.clientY;
+      cursor.style.left = `${cursorX}px`;
+      cursor.style.top = `${cursorY}px`;
+    });
+
+    function renderCursor() {
+      borderX += (cursorX - borderX) * 0.15;
+      borderY += (cursorY - borderY) * 0.15;
+      cursorBorder.style.left = `${borderX}px`;
+      cursorBorder.style.top = `${borderY}px`;
+      requestAnimationFrame(renderCursor);
+    }
+    requestAnimationFrame(renderCursor);
+
+    document.querySelectorAll('a, button, .card-contact').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hovered');
+        cursorBorder.classList.add('hovered');
+        initAudio();
+        playSound('hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hovered');
+        cursorBorder.classList.remove('hovered');
+      });
+    });
+
+    // --- TYPEWRITER EFFECT ---
+    let typewriterTimeout;
+    function typeWriter() {
+      const el = document.getElementById('typewriter-text');
+      const text = el.getAttribute('data-text');
+      el.innerHTML = '';
+      let i = 0;
+      clearTimeout(typewriterTimeout);
+
+      function type() {
+        if (i < text.length) {
+          el.innerHTML += text.charAt(i);
+          i++;
+          typewriterTimeout = setTimeout(type, 20); // typing speed
+        }
+      }
+      type();
+    }
+
+    // Initial call
+    typeWriter();
+
+    // --- SPA ROUTING (SMOOTH TABS) ---
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        initAudio();
+        playSound('click');
+
+        // Update buttons
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        // Update sections
+        const targetId = btn.getAttribute('data-target');
+        document.querySelector('.card').setAttribute('data-state', targetId);
+
+        document.querySelectorAll('.card-section').forEach(sec => {
+          sec.classList.remove('is-active');
+        });
+        document.getElementById(targetId).classList.add('is-active');
+
+        // Trigger typewriter if about section
+        if (targetId === 'about') {
+          typeWriter();
+        }
+
+        // Restart stagger animations
+        const targetSection = document.getElementById(targetId);
+        const staggers = targetSection.querySelectorAll('.stagger-item');
+        staggers.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight; /* trigger reflow */
+          el.style.animation = null;
+        });
+      });
+    });
+
+    // --- TRANSLATION DATA ---
+    const i18n = {
+      id: {
+        jobtitle: "Teknik Informatika | 24081024",
+        about_title: "ABOUT",
+        about_desc: "Mahasiswa Teknik Informatika di Universitas Hang Tuah Pekanbaru (UHTP) dengan minat mendalam pada UI/UX Design, pengembangan antarmuka menggunakan Figma, Adobe XD, Webflow, serta logika pemrograman backend.",
+        exp_title: "PROJECTS & EXPERIENCE",
+        exp_1_title: "UI/UX Designer di <span>HabitFlow App</span>",
+        exp_1_desc: "Merancang struktur desain dan alur pengguna untuk aplikasi pelacak kebiasaan.",
+        exp_2_title: "Junior AI Developer <span>Freelance</span>",
+        exp_2_desc: "Membangun model Machine Learning berbasis Python dan menerapkan teknik Prompt Engineering.",
+        exp_3_title: "Data Analyst Intern <span>FinTech Solutions</span>",
+        exp_3_desc: "Menganalisis pergerakan aset digital dan menerapkan indikator teknikal untuk optimasi sistem trading.",
+        exp_4_title: "Game UI/UX Designer <span>Nexus Studio</span>",
+        exp_4_desc: "Merancang purwarupa antarmuka interaktif dan layout dinamis untuk game mobile menggunakan Figma.",
+        exp_5_title: "Developer di <span>SI-MANTAN App</span>",
+        exp_5_desc: "Meningkatkan fitur interaktif pada aplikasi pembelajaran anatomi tubuh versi 3.0.",
+        exp_6_title: "Mahasiswa <span>UHTP</span>",
+        exp_6_desc: "Memulai studi Teknik Informatika dan aktif di proyek kolaborasi kelompok.",
+        contact_title: "CONTACT",
+        btn_work: "WORK TOGETHER",
+        showcase_title: "MY 3D SHOWCASE",
+        sc_1_title: "Cyber City 3D",
+        sc_1_desc: "Kota Cyberpunk Prosedural dengan animasi GSAP & jejak laser.",
+        sc_2_title: "Tata Surya",
+        sc_2_desc: "Tata surya 3D kompleks menggunakan CSS dengan lintasan akurat.",
+        sc_3_title: "Tabel Periodik",
+        sc_3_desc: "Tabel Periodik Unsur 3D Interaktif.",
+        sc_4_title: "Lubang Hitam (Blackhole)",
+        sc_4_desc: "Rendering blackhole berdasarkan teori fisika.",
+        sc_5_title: "Galeri Seni TimeTraveler",
+        sc_5_desc: "Galeri Seni Penjelajah Waktu Interaktif.",
+        stack_title: "TECH STACK",
+        nav_about: "ABOUT",
+        nav_exp: "EXPERIENCE",
+        nav_stack: "STACK",
+        nav_show: "SHOWCASE",
+        nav_contact: "CONTACT",
+        modal_launch: "Luncurkan Project",
+        form_title: "Hubungi Saya",
+        form_name: "Nama Anda",
+        form_msg: "Pesan Anda",
+        form_send: "KIRIM PESAN"
+      },
+      en: {
+        jobtitle: "Informatics Engineering | 24081024",
+        about_title: "ABOUT ME",
+        about_desc: "Informatics Engineering student at Hang Tuah University Pekanbaru (UHTP) with a deep interest in UI/UX Design, interface development using Figma, Adobe XD, Webflow, and backend programming logic.",
+        exp_title: "PROJECTS & EXPERIENCE",
+        exp_1_title: "UI/UX Designer at <span>HabitFlow App</span>",
+        exp_1_desc: "Designed the structure and user flow for a habit tracking application.",
+        exp_2_title: "Junior AI Developer <span>Freelance</span>",
+        exp_2_desc: "Built Python-based Machine Learning models and applied Prompt Engineering techniques.",
+        exp_3_title: "Data Analyst Intern <span>FinTech Solutions</span>",
+        exp_3_desc: "Analyzed digital asset movements and applied technical indicators for trading system optimization.",
+        exp_4_title: "Game UI/UX Designer <span>Nexus Studio</span>",
+        exp_4_desc: "Designed interactive UI prototypes and dynamic layouts for mobile games using Figma.",
+        exp_5_title: "Developer at <span>SI-MANTAN App</span>",
+        exp_5_desc: "Enhanced interactive features for human anatomy learning application version 3.0.",
+        exp_6_title: "Student <span>UHTP</span>",
+        exp_6_desc: "Started Informatics Engineering studies and actively participated in collaborative group projects.",
+        contact_title: "CONTACT ME",
+        btn_work: "WORK TOGETHER",
+        showcase_title: "MY 3D SHOWCASE",
+        sc_1_title: "Cyber City 3D",
+        sc_1_desc: "Procedural Cyberpunk City with GSAP animations & laser trails.",
+        sc_2_title: "Solar System",
+        sc_2_desc: "Complex CSS 3D solar system with accurate trajectories.",
+        sc_3_title: "Periodic Table",
+        sc_3_desc: "Interactive 3D Periodic Table of Elements.",
+        sc_4_title: "Blackhole",
+        sc_4_desc: "Physics-based blackhole rendering.",
+        sc_5_title: "TimeTraveler Art Gallery",
+        sc_5_desc: "Interactive Time Traveler Art Gallery.",
+        stack_title: "MY TECH STACK",
+        nav_about: "ABOUT",
+        nav_exp: "EXPERIENCE",
+        nav_stack: "STACK",
+        nav_show: "SHOWCASE",
+        nav_contact: "CONTACT",
+        modal_launch: "Launch Project",
+        form_title: "Get in Touch",
+        form_name: "Your Name",
+        form_msg: "Your Message",
+        form_send: "SEND MESSAGE"
+      }
+    };
+
+    let currentLang = 'id';
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLang = btn.getAttribute('data-lang');
+
+        initAudio();
+        playSound('click');
+
+        // Translate text contents
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (i18n[currentLang][key]) {
+            el.innerHTML = i18n[currentLang][key];
+          }
+        });
+
+        // Translate placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (i18n[currentLang][key]) {
+            el.placeholder = i18n[currentLang][key];
+          }
+        });
+
+        // Translate typewriter text
+        if (i18n[currentLang]['about_desc']) {
+          const typeEl = document.getElementById('typewriter-text');
+          typeEl.setAttribute('data-text', i18n[currentLang]['about_desc']);
+          if (document.querySelector('.card').getAttribute('data-state') === 'about') {
+            typeWriter();
+          }
+        }
+      });
+    });
+
+    // --- MODALS LOGIC ---
+    const projModal = document.getElementById('project-modal');
+    const contactModal = document.getElementById('contact-modal');
+
+    document.querySelectorAll('.view-project-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        initAudio(); playSound('click');
+
+        const titleKey = btn.getAttribute('data-title');
+        const descKey = btn.getAttribute('data-desc');
+
+        document.getElementById('modal-title').innerHTML = i18n[currentLang][titleKey] || titleKey;
+        document.getElementById('modal-desc').innerHTML = i18n[currentLang][descKey] || descKey;
+        document.getElementById('modal-launch').href = btn.getAttribute('data-url');
+
+        const techs = btn.getAttribute('data-tech').split(',');
+        const tagsHtml = techs.map(t => `<span>${t.trim()}</span>`).join('');
+        document.getElementById('modal-tags').innerHTML = tagsHtml;
+
+        projModal.classList.add('active');
+      });
+    });
+
+    document.getElementById('open-contact').addEventListener('click', () => {
+      initAudio(); playSound('click');
+      contactModal.classList.add('active');
+    });
+
+    document.querySelectorAll('.modal-close, .modal-overlay').forEach(el => {
+      el.addEventListener('click', (e) => {
+        if (e.target === el) {
+          projModal.classList.remove('active');
+          contactModal.classList.remove('active');
+        }
+      });
+    });
+
+    document.getElementById('send-btn').addEventListener('click', async (e) => {
+      e.preventDefault();
+      initAudio(); playSound('click');
+
+      const btn = e.target;
+      const nameVal  = document.getElementById('form-name').value.trim();
+      const emailVal = document.getElementById('form-email').value.trim();
+      const msgVal   = document.getElementById('form-msg').value.trim();
+
+      // --- Validasi sisi klien ---
+      if (!nameVal || !emailVal || !msgVal) {
+        btn.innerHTML = currentLang === 'id' ? '⚠️ ISI SEMUA FIELD!' : '⚠️ FILL ALL FIELDS!';
+        btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
+        setTimeout(() => {
+          btn.innerHTML = currentLang === 'id' ? 'KIRIM PESAN' : 'SEND MESSAGE';
+          btn.style.background = '';
+        }, 2000);
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailVal)) {
+        btn.innerHTML = currentLang === 'id' ? '⚠️ EMAIL TIDAK VALID!' : '⚠️ INVALID EMAIL!';
+        btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
+        setTimeout(() => {
+          btn.innerHTML = currentLang === 'id' ? 'KIRIM PESAN' : 'SEND MESSAGE';
+          btn.style.background = '';
+        }, 2000);
+        return;
+      }
+
+      // --- Kirim ke server ---
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = currentLang === 'id' ? '⏳ MENGIRIM...' : '⏳ SENDING...';
+      btn.style.opacity = '0.7';
+
+      try {
+        const response = await fetch('save_contact.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: nameVal, email: emailVal, message: msgVal })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // --- Sukses ---
+          btn.innerHTML = currentLang === 'id' ? 'TERKIRIM ✅' : 'SENT ✅';
+          btn.style.opacity = '1';
+          btn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
+
+          // Reset fields
+          document.getElementById('form-name').value  = '';
+          document.getElementById('form-email').value = '';
+          document.getElementById('form-msg').value   = '';
+
+          // Confetti 🎉
+          if (typeof confetti === 'function') {
+            confetti({
+              particleCount: 150,
+              spread: 100,
+              origin: { y: 0.6 },
+              colors: ['#8a84ff', '#53c8ef', '#ff003c', '#0f0']
+            });
+            setTimeout(() => playSound('click'), 100);
+            setTimeout(() => playSound('hover'), 200);
+          }
+
+          setTimeout(() => {
+            contactModal.classList.remove('active');
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 2500);
+
+        } else {
+          // --- Gagal dari server ---
+          btn.innerHTML = '❌ GAGAL! COBA LAGI';
+          btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
+          btn.style.opacity = '1';
+          btn.disabled = false;
+          console.error('Server error:', result.message);
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+          }, 3000);
+        }
+
+      } catch (err) {
+        // --- Network / fetch error ---
+        btn.innerHTML = '❌ KONEKSI GAGAL!';
+        btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        console.error('Fetch error:', err);
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+        }, 3000);
+      }
+    });
+
+    // --- NEW FEATURES ---
+
+    // 1. Live Time
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+      const liveTimeEl = document.getElementById('live-time');
+      if (liveTimeEl) liveTimeEl.innerText = timeString;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // 2. Dark/Light Mode Toggle
+    const darkModeBtn = document.getElementById('darkmode-toggle');
+    if (darkModeBtn) {
+      darkModeBtn.addEventListener('click', () => {
+        initAudio(); playSound('hover');
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+          darkModeBtn.innerText = '☀️';
+        } else {
+          darkModeBtn.innerText = '🌙';
+        }
+      });
+    }
+
+    // 3. Smart Filters
+    document.querySelectorAll('.smart-filters').forEach(filterContainer => {
+      filterContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('filter-btn')) {
+          initAudio(); playSound('click');
+          const filterVal = e.target.getAttribute('data-filter');
+          const parentSection = e.target.closest('.card-section');
+
+          // update buttons
+          parentSection.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+
+          // update items
+          parentSection.querySelectorAll('.filter-item').forEach(item => {
+            if (filterVal === 'all' || item.getAttribute('data-category') === filterVal) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

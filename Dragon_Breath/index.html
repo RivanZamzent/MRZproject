@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dragon Breath</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="c" aria-label="Dragon flame animation"></canvas>
+
+    <div class="status">
+      <div class="status-title">The dragon is</div>
+      <div class="status-value-wrap">
+        <div id="moodText" class="status-value mood-mad">Mad</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="percent"><span id="intensityValue">20</span>%</div>
+      
+      <div class="element-selector">
+        <button class="element-btn active" data-element="fire" title="Fire Breath">
+          <span class="icon">🔥</span>
+        </button>
+        <button class="element-btn" data-element="ice" title="Ice Breath">
+          <span class="icon">❄️</span>
+        </button>
+        <button class="element-btn" data-element="poison" title="Poison Breath">
+          <span class="icon">🧪</span>
+        </button>
+        <button class="element-btn" data-element="lightning" title="Lightning Breath">
+          <span class="icon">⚡</span>
+        </button>
+      </div>
+
+      <div class="range-row">
+        <input id="intensity" type="range" min="0" max="100" step="1" value="20" />
+      </div>
+      <div class="ends">
+        <span>Min</span>
+        <span>Max</span>
+      </div>
+    </div>
+
+    <noscript>
+      <div class="noscript-message">
+        Aktifkan JavaScript untuk melihat animasi naga.
+      </div>
+    </noscript>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

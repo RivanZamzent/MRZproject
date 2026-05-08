@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cube – 3D Puzzle Game</title>
+    <meta name="description" content="An immersive 3D cube puzzle game. Rotate, solve, and conquer the cube.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-box">
+            <div class="cube-loader">
+                <div class="face top"></div>
+                <div class="face front"></div>
+                <div class="face right"></div>
+            </div>
+            <p id="loading-text">INITIALIZING CUBE</p>
+        </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud">
+        <div class="hud-block">
+            <span class="hud-label">MOVES</span>
+            <span id="move-count" class="hud-value">0</span>
+        </div>
+        <div id="hud-title">THE CUBE</div>
+        <div class="hud-block">
+            <span class="hud-label">TIME</span>
+            <span id="timer" class="hud-value">00:00</span>
+        </div>
+    </div>
+
+    <!-- Game Canvas -->
+    <div id="scene-container"></div>
+
+    <!-- Panel Controls -->
+    <div id="panel">
+        <div id="panel-header">
+            <h2>CONTROLS</h2>
+        </div>
+
+        <div class="panel-section">
+            <p class="section-label">ROTATE FACE</p>
+            <div class="btn-grid">
+                <button class="move-btn" id="btn-U" data-move="U" title="Top Face Clockwise">U</button>
+                <button class="move-btn" id="btn-Ui" data-move="Ui" title="Top Face Counter-Clockwise">U'</button>
+                <button class="move-btn" id="btn-D" data-move="D" title="Bottom Face Clockwise">D</button>
+                <button class="move-btn" id="btn-Di" data-move="Di" title="Bottom Face Counter-Clockwise">D'</button>
+                <button class="move-btn" id="btn-R" data-move="R" title="Right Face Clockwise">R</button>
+                <button class="move-btn" id="btn-Ri" data-move="Ri" title="Right Face Counter-Clockwise">R'</button>
+                <button class="move-btn" id="btn-L" data-move="L" title="Left Face Clockwise">L</button>
+                <button class="move-btn" id="btn-Li" data-move="Li" title="Left Face Counter-Clockwise">L'</button>
+                <button class="move-btn" id="btn-F" data-move="F" title="Front Face Clockwise">F</button>
+                <button class="move-btn" id="btn-Fi" data-move="Fi" title="Front Face Counter-Clockwise">F'</button>
+                <button class="move-btn" id="btn-B" data-move="B" title="Back Face Clockwise">B</button>
+                <button class="move-btn" id="btn-Bi" data-move="Bi" title="Back Face Counter-Clockwise">B'</button>
+            </div>
+        </div>
+
+        <div class="panel-section">
+            <p class="section-label">ACTIONS</p>
+            <div class="action-btns">
+                <button class="action-btn primary" id="btn-scramble">SCRAMBLE</button>
+                <button class="action-btn" id="btn-reset">RESET</button>
+            </div>
+        </div>
+
+        <div class="panel-section">
+            <p class="section-label">KEYBOARD SHORTCUTS</p>
+            <div class="shortcuts">
+                <span><kbd>U</kbd> / <kbd>Shift+U</kbd></span><span>Top ±</span>
+                <span><kbd>D</kbd> / <kbd>Shift+D</kbd></span><span>Bottom ±</span>
+                <span><kbd>R</kbd> / <kbd>Shift+R</kbd></span><span>Right ±</span>
+                <span><kbd>L</kbd> / <kbd>Shift+L</kbd></span><span>Left ±</span>
+                <span><kbd>F</kbd> / <kbd>Shift+F</kbd></span><span>Front ±</span>
+                <span><kbd>B</kbd> / <kbd>Shift+B</kbd></span><span>Back ±</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Win Screen -->
+    <div id="win-screen" class="hidden">
+        <div class="win-box">
+            <div class="win-glow"></div>
+            <h2 id="win-title">SOLVED!</h2>
+            <p id="win-stats"></p>
+            <button class="action-btn primary" id="btn-play-again">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

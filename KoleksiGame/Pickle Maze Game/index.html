@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickle Maze – Find Your Way Out!</title>
+  <meta name="description" content="An addictive maze puzzle game. Choose your difficulty and navigate to the exit!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="gradient"></div>
+
+  <div id="page">
+
+    <!-- Congratulations Modal -->
+    <div id="Message-Container">
+      <div id="message">
+        <h1>🎉 Congrats!</h1>
+        <p>You escaped the maze!</p>
+        <p id="moves"></p>
+        <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="Play Again!" />
+      </div>
+    </div>
+
+    <!-- Top Menu -->
+    <div id="menu">
+      <div id="game-title">PICKLE MAZE</div>
+      <div id="menu-controls">
+        <div class="custom-select">
+          <select id="diffSelect" title="Select difficulty">
+            <option value="10">🟢 Easy</option>
+            <option value="15">🟡 Medium</option>
+            <option value="25">🔴 Hard</option>
+            <option value="38">💀 Extreme</option>
+          </select>
+        </div>
+        <input id="startMazeBtn" type="button" onclick="makeMaze()" value="▶ Start" />
+      </div>
+    </div>
+
+    <!-- Maze Canvas -->
+    <div id="view">
+      <div id="mazeContainer">
+        <canvas id="mazeCanvas" class="border" height="1100" width="1100"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

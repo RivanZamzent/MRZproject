@@ -1,0 +1,275 @@
+/* ============================================
+   Pickle Maze Game – style.css
+   (Converted from SCSS + visual polish)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap');
+
+/* ── Variables ── */
+:root {
+  --menu-height: 75px;
+  --accent: #23D5AB;
+  --accent2: #E73C7E;
+  --bg-dark: rgba(0, 0, 0, 0.45);
+  --bg-hover: rgba(0, 0, 0, 0.70);
+  --radius: 8px;
+  --transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0; bottom: 0; left: 0; right: 0;
+  font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ── Animated Gradient Background ── */
+#gradient {
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Page Layout ── */
+#page {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top Menu ── */
+#menu {
+  height: var(--menu-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+#game-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(35, 213, 171, 0.8);
+  margin-right: 1rem;
+}
+
+#menu-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ── Inputs & Buttons ── */
+input[type="button"],
+select {
+  transition: var(--transition);
+  cursor: pointer;
+  background-color: var(--bg-dark);
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="button"]:hover,
+select:hover {
+  background-color: var(--bg-hover);
+  border-color: rgba(35, 213, 171, 0.5);
+  box-shadow: 0 0 14px rgba(35, 213, 171, 0.3);
+}
+
+input[type="button"]:active,
+select:active {
+  background: rgba(35, 213, 171, 0.3);
+  transform: scale(0.97);
+}
+
+input[type="button"]:focus,
+select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+#startMazeBtn {
+  background: linear-gradient(135deg, rgba(35, 213, 171, 0.5), rgba(23, 166, 213, 0.5));
+  border-color: rgba(35, 213, 171, 0.5);
+  min-width: 100px;
+}
+
+#startMazeBtn:hover {
+  background: linear-gradient(135deg, rgba(35, 213, 171, 0.8), rgba(23, 166, 213, 0.8));
+}
+
+/* ── Custom Select Dropdown Arrow ── */
+.custom-select {
+  display: inline-block;
+  position: relative;
+}
+
+.custom-select select {
+  padding-right: 36px;
+  min-width: 130px;
+}
+
+.custom-select::after {
+  content: '▾';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  font-size: 0.85rem;
+}
+
+/* ── Maze View Area ── */
+#view {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+}
+
+#mazeContainer {
+  transition: opacity 1s linear;
+  opacity: 0;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+#mazeCanvas {
+  margin: 0;
+  display: block;
+  border-radius: 4px;
+}
+
+.border {
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+}
+
+/* ── Victory Modal ── */
+#Message-Container {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  transition: visibility 0.2s, opacity 0.2s;
+}
+
+#message {
+  background: rgba(10, 15, 30, 0.85);
+  border: 1px solid rgba(35, 213, 171, 0.4);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 60px rgba(35, 213, 171, 0.2), 0 20px 60px rgba(0,0,0,0.5);
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+#message h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, var(--accent), #23A6D5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#message p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.4rem 0;
+}
+
+#moves {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+#okBtn {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, var(--accent), #23A6D5) !important;
+  border: none !important;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  padding: 0.7rem 2rem !important;
+  border-radius: 10px !important;
+  min-width: 140px;
+  height: auto !important;
+  box-shadow: 0 4px 20px rgba(35, 213, 171, 0.4);
+}
+
+#okBtn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(35, 213, 171, 0.5) !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  #game-title { display: none; }
+  #menu { gap: 0.5rem; }
+  .custom-select select { min-width: 100px; font-size: 0.85rem; }
+}

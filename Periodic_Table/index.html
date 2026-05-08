@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Periodic Table</title>
+  <meta name="description" content="Interactive 3D Periodic Table of Elements with table, sphere, helix, and grid views powered by CSS 3D transforms and anime.js animations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Controls -->
+  <div class="controls">
+    <div class="controls-group display br">
+      <button class="is-active toggle" id="table">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="1" y="10" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="10" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+        Table
+      </button>
+      <button class="toggle" id="sphere">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><ellipse cx="8" cy="8" rx="3" ry="6.5" stroke="currentColor" stroke-width="1.2"/><line x1="1.5" y1="8" x2="14.5" y2="8" stroke="currentColor" stroke-width="1.2"/></svg>
+        Sphere
+      </button>
+      <button class="toggle" id="helix">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 2C4 2 12 4 12 8C12 12 4 14 4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Helix
+      </button>
+      <button class="toggle" id="grid">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="6.25" y="1" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="11.5" y="1" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="1" y="6.25" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="6.25" y="6.25" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="11.5" y="6.25" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="1" y="11.5" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="6.25" y="11.5" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/><rect x="11.5" y="11.5" width="3.5" height="3.5" rx="0.5" stroke="currentColor" stroke-width="1.2"/></svg>
+        Grid
+      </button>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend" id="legend">
+    <div class="legend-item" data-color="0"><span class="legend-swatch"></span>Reactive nonmetals</div>
+    <div class="legend-item" data-color="1"><span class="legend-swatch"></span>Noble gases</div>
+    <div class="legend-item" data-color="2"><span class="legend-swatch"></span>Alkali metals</div>
+    <div class="legend-item" data-color="3"><span class="legend-swatch"></span>Alkaline earth metals</div>
+    <div class="legend-item" data-color="4"><span class="legend-swatch"></span>Metalloids</div>
+    <div class="legend-item" data-color="5"><span class="legend-swatch"></span>Post-transition metals</div>
+    <div class="legend-item" data-color="6"><span class="legend-swatch"></span>Transition metals</div>
+    <div class="legend-item" data-color="7"><span class="legend-swatch"></span>Lanthanides</div>
+    <div class="legend-item" data-color="8"><span class="legend-swatch"></span>Actinides</div>
+    <div class="legend-item" data-color="9"><span class="legend-swatch"></span>Unknown properties</div>
+  </div>
+
+  <!-- Search -->
+  <div class="search-container" id="search-container">
+    <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="10.5" y1="10.5" x2="14.5" y2="14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <input type="text" id="search-input" placeholder="Search elements..." autocomplete="off">
+  </div>
+
+  <!-- 3D Scene -->
+  <div id="scene">
+    <div id="scene-content" data-layout="table"></div>
+  </div>
+
+  <!-- Element Detail Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <div class="modal-header">
+        <div class="modal-symbol" id="modal-symbol"></div>
+        <div class="modal-info">
+          <h2 class="modal-name" id="modal-name"></h2>
+          <div class="modal-number" id="modal-number"></div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-props">
+          <div class="modal-prop">
+            <span class="modal-prop-label">Atomic Mass</span>
+            <span class="modal-prop-value" id="modal-mass"></span>
+          </div>
+          <div class="modal-prop">
+            <span class="modal-prop-label">Density</span>
+            <span class="modal-prop-value" id="modal-density"></span>
+          </div>
+          <div class="modal-prop">
+            <span class="modal-prop-label">Melting Point</span>
+            <span class="modal-prop-value" id="modal-melting"></span>
+          </div>
+          <div class="modal-prop">
+            <span class="modal-prop-label">Boiling Point</span>
+            <span class="modal-prop-value" id="modal-boiling"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Credits -->
+  <div class="credits">
+    3D transform calculations ported from this three.js <a href="https://threejs.org/examples/css3d_periodictable.html" target="_blank">demo</a>.
+  </div>
+
+  <!-- Element Template -->
+  <template id="element">
+    <button class="element" data-color="0">
+      <div class="element-number"></div>
+      <div class="element-symbol"></div>
+      <div class="element-title"></div>
+      <div class="element-description"></div>
+    </button>
+  </template>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

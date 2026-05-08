@@ -1,0 +1,181 @@
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080810;
+    --surface: #10101e;
+    --border: rgba(255,255,255,0.08);
+    --text: #e8e4ff;
+    --muted: rgba(232,228,255,0.45);
+    --accent: #b57bee;
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-mono);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem 3rem;
+    gap: 0;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  header h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 8vw, 5rem);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    background: linear-gradient(135deg, #b57bee 0%, #5ec9f5 50%, #f55e9e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  header p {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+
+  .canvas-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 60px rgba(181,123,238,0.12), 0 0 120px rgba(94,201,245,0.06);
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    background: #080810;
+  }
+
+  .watermark {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.12);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    pointer-events: none;
+    font-family: var(--font-mono);
+  }
+
+  .controls {
+    width: 100%;
+    max-width: 680px;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .slider-row {
+    display: grid;
+    grid-template-columns: 72px 1fr 36px;
+    align-items: center;
+    gap: 12px;
+  }
+  .slider-row label {
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .slider-row span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: right;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: var(--border);
+    border-radius: 99px;
+    outline: none;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+  input[type=range]:hover::-webkit-slider-thumb { transform: scale(1.25); }
+  input[type=range]::-moz-range-thumb {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 0.25rem 0;
+  }
+
+  .btn-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  button:hover {
+    border-color: rgba(255,255,255,0.22);
+    color: var(--text);
+  }
+  button.active {
+    color: var(--text);
+    border-color: transparent;
+  }
+  button#btn-pause { margin-left: auto; }
+
+  #btn-t1.active { background: rgba(181,123,238,0.18); border-color: rgba(181,123,238,0.45); color: #c99af5; }
+  #btn-t2.active { background: rgba(245,132,74,0.18); border-color: rgba(245,132,74,0.45); color: #f5a36a; }
+  #btn-t3.active { background: rgba(62,204,204,0.18); border-color: rgba(62,204,204,0.45); color: #5ef0f0; }
+  #btn-t4.active { background: rgba(245,94,158,0.18); border-color: rgba(245,94,158,0.45); color: #f57ec0; }
+  #btn-pause.paused { background: rgba(255,255,255,0.06); color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+  footer {
+    margin-top: 2rem;
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.18);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }

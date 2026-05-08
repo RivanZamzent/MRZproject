@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tension - Physics Visualization</title>
+    <meta name="description" content="Interaktifitas tegangan fisik menggunakan integrasi Verlet dalam visualisasi modern.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+        
+        <header>
+            <h1 id="title">TENSION</h1>
+            <p id="subtitle">Interactive Physics Simulation</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-item">
+                <span>Tension Intensity</span>
+                <div class="bar-bg"><div id="tension-bar" class="bar-fill"></div></div>
+            </div>
+            <p class="instruction">Drag the fabric to feel the tension</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

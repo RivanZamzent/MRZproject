@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab City 3D</title>
+    <meta name="description" content="Interactive 3D procedural city visualization built with Three.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header disable-selection">
+        <div class="header-content">
+            <h1><strong>Lab City 3D</strong></h1>
+            <p class="small">&ndash; Back to the red &ndash;</p>
+            <div class="btn" onclick="cameraSet()">+ ADD LINE</div>
+        </div>
+    </div>
+
+    <div class="footer disable-selection">
+        <h4>Experiment N.3</h4>
+        <small><a href="https://dribbble.com/victorvergara" target="_blank">dribbble.com/victorvergara</a></small>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

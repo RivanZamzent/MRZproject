@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loop — CodePen Challenge</title>
+    <meta name="description" content="Interactive loop generator with theme controls and animated trails." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Loop</h1>
+      <p class="subtitle">Drag sliders · Change theme · Watch loops emerge</p>
+    </header>
+
+    <main>
+      <section class="canvas-wrap">
+        <canvas id="c" aria-label="Animated loop drawing canvas"></canvas>
+        <div class="watermark">Loop ➰</div>
+      </section>
+
+      <section class="controls" aria-label="Loop controls">
+        <div class="slider-row">
+          <label for="arms">Arms</label>
+          <input type="range" id="arms" min="2" max="8" step="1" value="4" />
+          <span id="arms-v">4</span>
+        </div>
+        <div class="slider-row">
+          <label for="ratio">Ratio</label>
+          <input type="range" id="ratio" min="2" max="11" step="1" value="3" />
+          <span id="ratio-v">3</span>
+        </div>
+        <div class="slider-row">
+          <label for="spd">Speed</label>
+          <input type="range" id="spd" min="1" max="12" step="1" value="4" />
+          <span id="spd-v">4</span>
+        </div>
+        <div class="slider-row">
+          <label for="trail">Trail</label>
+          <input type="range" id="trail" min="100" max="1200" step="50" value="700" />
+          <span id="trail-v">700</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="btn-row" role="group" aria-label="Theme and playback controls">
+          <button type="button" id="btn-t1" data-theme="neon" class="active">Neon</button>
+          <button type="button" id="btn-t2" data-theme="ember">Ember</button>
+          <button type="button" id="btn-t3" data-theme="ocean">Ocean</button>
+          <button type="button" id="btn-t4" data-theme="candy">Candy</button>
+          <button type="button" id="btn-clear">Clear</button>
+          <button type="button" id="btn-pause">⏸ Pause</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>Interactive demo built with canvas and custom controls.</footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
