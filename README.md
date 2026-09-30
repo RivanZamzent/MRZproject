@@ -30,6 +30,12 @@ A mini-suite of interactive web games:
 - **[GaleryArt TimeTraveler](GaleryArt_TimeTraveler/)** - Art exhibition interface.
 - **[ProjectUTS WebPrograming](ProjectUTS_WebPrograming/)** - Web Programming Midterm Project (Academic).
 
+### 📱 Android Projects (Academic)
+- **[Tugas 1: New Project Android](Android_Projects/Tugas1_New_Project_Android/)**
+- **[Tugas 2: Intent Activity](Android_Projects/Tugas2_IntentActivity/)**
+- **[Tugas 3: Konversi Nilai Activity](Android_Projects/Tugas3_Konversi_Nilai_Activity/)**
+- **[Tugas 4: Kirim Data Activity](Android_Projects/Tugas4_Kirim_Data_Activity/)**
+
 ---
 
 ## 🛠️ Tech Stack

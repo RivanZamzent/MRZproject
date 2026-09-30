@@ -19,3 +19,15 @@ yarn-error.log*
 # XAMPP / Web Server specific
 .htaccess
 phpmyadmin/
+
+# Android
+*.iml
+.gradle
+/local.properties
+.idea/
+/build
+build/
+captures/
+.externalNativeBuild
+.cxx
+local.properties
