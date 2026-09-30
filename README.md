@@ -56,6 +56,3 @@ This collection primarily uses:
 **Mas'ud Rifan Zamzent**  
 📧 [irfanmasud66@gmail.com](mailto:irfanmasud66@gmail.com)  
 🔗 [GitHub Profile](https://github.com/RivanZamzent)
-
----
-*Created with ❤️ and Antigravity AI.*
