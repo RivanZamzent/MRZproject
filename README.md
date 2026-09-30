@@ -21,14 +21,13 @@ Welcome to the **MRZ Project Collection**! This repository is a curated showcase
 
 ### 🎮 Koleksi Game (Game Collection)
 A mini-suite of interactive web games:
-- **Pickle Maze Game** - Navigate through challenging mazes.
-- **Spell Caster** - Magical interaction game.
-- **Stick Hero** - Precision and timing game.
-- **The Cube** - 3D puzzle/interaction game.
+- **[Pickle Maze Game](KoleksiGame/Pickle%20Maze%20Game/)** - Navigate through challenging mazes.
+- **[Spell Caster](KoleksiGame/Spell%20Caster/)** - Magical interaction game.
+- **[Stick Hero](KoleksiGame/Stick%20Hero/)** - Precision and timing game.
+- **[The Cube](KoleksiGame/The_Cube/)** - 3D puzzle/interaction game.
 
 ### 🏛️ Gallery & Portfolio
 - **[GaleryArt TimeTraveler](GaleryArt_TimeTraveler/)** - Art exhibition interface.
-- **[GaleryHall](GaleryHall/)** - Virtual hall experience.
 - **[ProjectUTS WebPrograming](ProjectUTS_WebPrograming/)** - Web Programming Midterm Project (Academic).
 
 ---
@@ -56,3 +55,4 @@ This collection primarily uses:
 **Mas'ud Rifan Zamzent**  
 📧 [irfanmasud66@gmail.com](mailto:irfanmasud66@gmail.com)  
 🔗 [GitHub Profile](https://github.com/RivanZamzent)
+
