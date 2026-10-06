@@ -29,13 +29,11 @@ public class MainActivity extends AppCompatActivity {
                 String vNama = edNama.getText().toString();
                 String vAlamat = edAlamat.getText().toString();
 
-                // Konversi umur ke float (sesuai contoh di video)
                 float vUmur = 0;
                 if (!edUmur.getText().toString().isEmpty()) {
                     vUmur = Float.parseFloat(edUmur.getText().toString());
                 }
 
-                // Kirim data dengan Intent (putExtra)
                 Intent intent = new Intent(MainActivity.this, ProfilPegawaiKirim.class);
                 intent.putExtra("NAMA", vNama);
                 intent.putExtra("ALAMAT", vAlamat);

@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:padding="20dp"
+    tools:context=".HomeActivity">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_gedung"
-        android:layout_marginBottom="20dp" />
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/gedung"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo" />
 
     <Button
         android:id="@+id/btn_nilai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nilai Mahasiswa"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="12dp"/>
 
     <Button
-        android:id="@+id/btn_petunjuk"
+        android:id="@+id/bt_petunjuk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Petunjuk Penggunaan"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="12dp"/>
 
     <Button
-        android:id="@+id/btn_tentang"
+        android:id="@+id/bt_tentang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tentang Aplikasi"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="12dp"/>
+
 </LinearLayout>
